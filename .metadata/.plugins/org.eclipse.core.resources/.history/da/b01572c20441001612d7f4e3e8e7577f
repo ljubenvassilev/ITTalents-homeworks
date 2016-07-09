@@ -1,0 +1,11 @@
+package work;
+
+class Employee {
+
+	private String name;
+	private Task currentTask;
+	private int hoursLeft;
+	
+	
+	
+}

@@ -1,0 +1,26 @@
+package upr;
+
+import java.util.Scanner;
+
+public class Edno {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int num=0;
+		do{
+			System.out.println("Input number:");
+			num=sc.nextInt();
+		}while(num<1);
+		for(int i=1; i<=num;i++){
+			if(num%i==0){
+				System.out.println(i+" ");
+			}
+		}
+		
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}

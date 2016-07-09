@@ -1,0 +1,29 @@
+package hw5;
+
+import java.util.Scanner;
+
+public class Zad6 {
+
+	public static void main(String[] args) {
+
+		StringBuilder builder = stringInput();
+		builder.replace(0, 0, builder.toString().substring(0, 1).toUpperCase());
+		for (int i = 1; i < builder.length()-2; i++) {
+			if (builder.toString().charAt(i)==' '){
+				builder.replace((i+1), (i+1), builder.toString().substring((i+2),(i+1)).toUpperCase());
+			}
+		}
+		System.out.println(builder);
+	}
+	static StringBuilder stringInput(){
+		Scanner sc = new Scanner(System.in);
+		String s;
+		do{
+			System.out.println("Enter text:");
+			s = sc.nextLine();
+		}while (s.length()<1);
+		StringBuilder s1=new StringBuilder(s);
+		return s1;
+		
+	}
+}

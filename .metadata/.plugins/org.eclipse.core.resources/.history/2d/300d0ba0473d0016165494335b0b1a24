@@ -1,0 +1,17 @@
+package hw6;
+
+public class UseComputers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Computer pc = new Computer();
+		pc.year=2016;
+		pc.price=2000;
+		pc.operationSystem="Windows 10 x64";
+		pc.isNotebook=false;
+		pc.hardDiskMemory=4194304;
+		pc.freeMemory=4194304;
+
+	}
+
+}

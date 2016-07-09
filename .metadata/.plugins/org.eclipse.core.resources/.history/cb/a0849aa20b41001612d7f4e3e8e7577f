@@ -1,0 +1,57 @@
+package work;
+
+class Employee {
+
+	private String name;
+	private Task currentTask;
+	private int hoursLeft;
+	
+	private Employee(String name){
+		if(name.length()>0){
+			this.name=name;
+		}
+	}
+
+	private String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		if (name.length()>0){
+			this.name = name;
+		}
+	}
+
+	private Task getCurrentTask() {
+		return currentTask;
+	}
+
+	private void setCurrentTask(Task currentTask) {
+		this.currentTask = currentTask;
+	}
+
+	private int getHoursLeft() {
+		return hoursLeft;
+	}
+
+	private void setHoursLeft(int hoursLeft) {
+		if(hoursLeft>=0&&hoursLeft<=24){
+			this.hoursLeft = hoursLeft;
+		}
+	}
+	
+	private void work(){
+		if (hoursLeft>=currentTask.getWorkingHours()){
+			setHoursLeft(getHoursLeft()-currentTask.getWorkingHours());
+			currentTask.setWorkingHours(0);
+			return;
+		}
+		currentTask.setWorkingHours(currentTask.getWorkingHours()-getHoursLeft());
+		setHoursLeft(0);
+	}
+	private void showReport(){
+		System.out.println("Employee name: "+getName());
+		System.out.println("Working hours left: "+getHoursLeft());
+		currentTask.printInfo();
+	}
+}

@@ -1,0 +1,36 @@
+package hw5;
+
+import java.util.Scanner;
+
+public class Zad2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		StringBuilder s1=stringInput();
+		StringBuilder s2=stringInput();
+		System.out.println(s1+" "+s2);
+		StringBuilder s3=new StringBuilder(s1);
+		System.out.println(s1+" "+s2);
+		s3.delete(5, s3.length());
+		System.out.println(s1+" "+s2);
+		StringBuilder s4=new StringBuilder(s2);
+		s4.delete(5, s4.length());
+		s1.replace(0, 4, s4.toString());
+		s2.replace(0, 4, s3.toString());
+		System.out.println(s1+" "+s2);
+	}
+
+	static StringBuilder stringInput(){
+		Scanner sc = new Scanner(System.in);
+		String s;
+		do{
+			System.out.println("Enter text:");
+			s = sc.nextLine();
+		}while (s.length()>=20||s.length()<10);
+		StringBuilder s1=new StringBuilder(s);
+		return s1;
+		
+	}
+
+}

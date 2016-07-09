@@ -1,0 +1,33 @@
+package hw5;
+
+import java.util.Scanner;
+
+public class Zad2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s1=stringInput();
+		String s2=stringInput();
+		for (int i = 0; i < 5; i++) {
+			char temp=s2.charAt(i);
+			s2.charAt(i)=s1.charAt(i);			
+		}
+	}
+
+	static String stringInput(){
+		Scanner sc = new Scanner(System.in);
+		String s;
+		do{
+			System.out.println("Enter text:");
+			s = sc.nextLine();
+		}while (s.length()>=20||s.length()<10);
+
+		return s;
+		
+	}
+	static char changeChar(char a){
+		
+		return a;
+	}
+}

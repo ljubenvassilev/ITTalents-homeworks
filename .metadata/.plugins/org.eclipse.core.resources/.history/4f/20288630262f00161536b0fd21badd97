@@ -1,0 +1,42 @@
+package hw5;
+
+public class Zad11do14 {
+
+	public static void main(String[] args) {
+		
+		int[] array =createArray(10);
+		int[] array2 =createArray(8);
+		printArray(mergeArrays(array,array2));
+		System.out.println(factoriel(5));
+		
+	}
+	static void printArray(int[] arr){
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+	}
+	static int[] createArray(int n){
+		int[] arr= new int[n];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i]=i+1;
+		}
+		return arr;
+	}
+	static int[] mergeArrays(int[] arr1, int[] arr2){
+		int[]arr=new int[arr1.length+arr2.length];
+		for (int i = 0; i < arr1.length; i++) {
+			arr[i]=arr1[i];
+		}
+		for (int i = 0; i < arr2.length; i++) {
+			arr[i+arr1.length]=arr2[i];
+		}
+		return arr;
+	}
+	static int factoriel (int n){
+		if (n==1){
+			return 1;
+		}
+		return n*factoriel(n);
+	}
+}

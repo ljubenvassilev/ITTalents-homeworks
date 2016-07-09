@@ -1,0 +1,20 @@
+package hw5;
+import java.util.Scanner;
+public class Zad4 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Input two names (separated with a comma):");
+		String names = sc.next();
+		String name1=names.substring(0, names.indexOf(','));
+		String name2=names.substring((names.indexOf(',')+1));
+
+		System.out.println(name1);
+		System.out.println(name2);
+		
+	}
+	
+
+}

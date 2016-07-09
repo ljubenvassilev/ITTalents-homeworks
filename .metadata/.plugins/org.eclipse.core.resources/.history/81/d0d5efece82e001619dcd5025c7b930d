@@ -1,0 +1,43 @@
+package hw5;
+
+import java.util.Scanner;
+
+public class Zad2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		StringBuilder s1=stringInput();
+		StringBuilder s2=stringInput();
+		if(s1.length()>s2.length()){
+			System.out.println(s1.length());
+		}
+		else{
+			System.out.println(s2.length());
+		}
+		int x=5;
+		changeFirstNCharacters(s1, s2, x);
+		System.out.println(s1+" "+s2);
+	}
+
+	static StringBuilder stringInput(){
+		Scanner sc = new Scanner(System.in);
+		String s;
+		do{
+			System.out.println("Enter text:");
+			s = sc.nextLine();
+		}while (s.length()>=20||s.length()<10);
+		StringBuilder s1=new StringBuilder(s);
+		return s1;
+		
+	}
+	
+	static StringBuilder changeFirstNCharacters(StringBuilder a, StringBuilder b, int border){
+		StringBuilder d=new StringBuilder(a);
+
+		d.delete(border,d.length());
+		a.replace(0, border, b.substring(0, 4));
+		b.replace(0,border,d.toString());
+		return d;
+	}
+}

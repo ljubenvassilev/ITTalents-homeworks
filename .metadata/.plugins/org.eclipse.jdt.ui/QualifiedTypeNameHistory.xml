@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="javax.swing.SingleSelectionModel"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="java.math.RoundingMode"/>
+<fullyQualifiedTypeName name="people.Student"/>
+<fullyQualifiedTypeName name="people.Person"/>
+<fullyQualifiedTypeName name="people.Employee"/>
+<fullyQualifiedTypeName name="hw6.GSM"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,18 @@
+package hw2;
+
+import java.util.Scanner;
+
+public class Zad1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Input whole number between 100 and 999:");
+		int num1 = sc.nextInt();
+		if (num1<100||num1>999){
+			System.out.println("Number outside interval.");
+		}
+		else {
+			
+		}
+	}
+}

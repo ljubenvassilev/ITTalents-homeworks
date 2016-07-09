@@ -1,0 +1,29 @@
+package hw2;
+
+import java.util.Scanner;
+
+public class Zad14 {
+	
+	public static void main (String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter N:");
+		
+		int n = sc.nextInt();
+		
+		if (n>=10&&n<=200){
+			for(;n>=0;n--){
+				if (n%7==0){
+					System.out.println(n+" ");
+				}
+			}
+		}
+		else{
+			System.out.println("Incorrect input.");
+		}
+		
+		
+	}
+
+}

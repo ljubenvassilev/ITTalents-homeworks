@@ -1,0 +1,12 @@
+package work;
+
+public class Working {
+
+	public static void main(String[] args) {
+	
+		Employee workHard = new Employee("Ivan");
+		workHard.setHoursLeft(10);
+
+	}
+
+}

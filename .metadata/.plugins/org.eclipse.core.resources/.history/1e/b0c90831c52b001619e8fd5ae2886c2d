@@ -1,0 +1,45 @@
+package hw4;
+
+import java.util.Scanner;
+
+public class Toni {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//array
+		int[][] array= new int[6][6];
+		
+		System.out.println("Please enter positiv members of array:");
+		for(int i=0;i<array.length;i++){
+			for(int j=0;j<array[i].length;j++){
+				//enter positive values
+				do{
+				System.out.print("array["+i+"]["+j+"]=");
+				array[i][j]=sc.nextInt();
+				}while(array[i][j]<0);
+			}
+			
+		}
+		
+		//finding sums
+		int oddSum=0;
+		int allSum=0;
+		for(int i=0;i<array.length;i++){
+			for(int j=0;j<array[i].length;j++){
+				if((i+j)%2==0){
+					oddSum+=array[i][j];
+					System.out.print(array[i][j]+" ");
+				}
+			}
+			System.out.print(" ����:"+oddSum);
+			allSum+=oddSum;
+			oddSum=0;
+			System.out.println();
+		}
+		System.out.println("���� �� ���������� : "+allSum);
+		
+	}
+
+}

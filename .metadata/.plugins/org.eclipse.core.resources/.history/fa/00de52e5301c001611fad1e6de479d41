@@ -1,0 +1,23 @@
+package hw2;
+
+import java.util.Scanner;
+
+public class Zad17 {
+	
+	public static void main (String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+		Scanner reader = new Scanner(System.in);
+		
+		System.out.println("Enter b:");
+		
+		int b = sc.nextInt();
+	
+		System.out.println("Enter M:");
+		
+		char c = reader.next(".").charAt(0);
+		System.out.println(c);
+
+	}
+
+}

@@ -1,0 +1,41 @@
+package work;
+
+class Employee {
+
+	private String name;
+	private Task currentTask;
+	private int hoursLeft;
+	
+	private Employee(String name){
+		if(name.length()>0){
+			this.name=name;
+		}
+	}
+
+	private String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	private Task getCurrentTask() {
+		return currentTask;
+	}
+
+	private void setCurrentTask(Task currentTask) {
+		this.currentTask = currentTask;
+	}
+
+	private int getHoursLeft() {
+		return hoursLeft;
+	}
+
+	private void setHoursLeft(int hoursLeft) {
+		this.hoursLeft = hoursLeft;
+	}
+	
+	
+	
+}

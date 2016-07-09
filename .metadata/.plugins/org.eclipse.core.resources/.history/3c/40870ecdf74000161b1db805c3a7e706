@@ -1,0 +1,18 @@
+package university;
+
+public class StudentGroup {
+
+	String groupSubject;
+	Student[] students;
+	int freePlaces;
+	
+	StudentGroup(){
+		freePlaces=5;
+		students= new Student[5];
+	}
+	StudentGroup(String subject){
+		this();
+		this.groupSubject=subject;
+	}
+	
+}

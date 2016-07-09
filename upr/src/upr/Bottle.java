@@ -1,0 +1,16 @@
+package upr;
+
+public class Bottle {
+	
+	String color;
+	double volume;
+	boolean hasCap;
+	String content;
+	String shape;
+	boolean hasLabel;
+	double price;
+	boolean isPromotional;
+//	Person owner;
+//	Company manufacturer;
+
+}

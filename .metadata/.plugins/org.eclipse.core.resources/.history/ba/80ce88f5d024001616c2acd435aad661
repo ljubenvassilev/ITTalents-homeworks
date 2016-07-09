@@ -1,0 +1,75 @@
+package hw3;
+
+import java.util.Scanner;
+
+public class Zad15 {
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		int n=0;
+		do {
+			System.out.println("Input size larger than three:");
+			n = sc.nextInt();
+		} while(n<4);
+
+		//create array and fill with numbers
+		double[] array = new double[n];
+		for (int i=0;i<array.length;i++){
+			System.out.println("Input number on position "+(i+1)+":");
+			array[i]= sc.nextDouble();
+		}
+		double num1=array[0];
+		int position1=0;
+		double num2=array[1];
+		int position2=1;
+		double num3=array[2];
+		int position3=2;
+		double sum=num1+num2+num3;
+		boolean negative=false;
+		for (int i = 3; i < array.length; i++) {
+//check for negative and revert
+			if (array[i]<0){
+				negative=true;
+				array[i]*=-1;
+			}
+//check for num 1
+			if ((num1>num2)&&(num1>num3)&&(array[i]+num3+num2)>sum){
+				num1=array[i];
+				position1=i;
+				sum=num1+num2+num3;
+				if (negative){
+					array[i]*=-1;
+					negative=false;
+				}
+				continue;
+			}
+			//check for num 2
+			if ((num2>num3)&&(num2>num1)&&(array[i]+num1+num3)>sum){
+				num2=array[i];
+				position2=i;
+				sum=num1+num2+num3;
+				if (negative){
+					array[i]*=-1;
+					negative=false;
+				}
+			}
+
+//check for num 3
+			if ((num3>num2)&&(num3>num1)&&(array[i]+num1+num2)>sum){
+				num3=array[i];
+				sum=num1+num2+num3;
+				position3=i;
+
+				continue;
+			}
+
+			//revert again if it was negative
+			if (negative){
+				array[i]*=-1;
+				negative=false;
+			}
+		}
+		System.out.println(array[position1]+" "+array[position2]+" "+array[position3]);
+	}
+}
