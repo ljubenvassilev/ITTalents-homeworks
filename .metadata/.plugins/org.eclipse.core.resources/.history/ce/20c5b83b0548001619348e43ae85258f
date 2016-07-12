@@ -1,0 +1,43 @@
+package work;
+
+class Working {
+
+	public static void main(String[] args) {
+	
+		Task task1 = new Task("Task1", 3);
+		Task task2 = new Task("Task2", 1);
+		Task task3 = new Task("Task3", 5);
+		Task task4 = new Task("Task4", 18);
+		Task task5 = new Task("Task5", 14);
+		Task task6 = new Task("Task6", 7);
+		
+		Employee ivan = new Employee("Ivan");
+		ivan.setHoursLeft(10);
+		Employee toni = new Employee("Toni");
+		toni.setHoursLeft(1);
+		Employee doni = new Employee("Doni");
+		doni.setHoursLeft(8);
+		Employee moni = new Employee("Moni");
+		moni.setHoursLeft(12);
+		
+		ivan.setCurrentTask(task1);
+		ivan.work();
+		ivan.setCurrentTask(task2);
+		ivan.work();
+		ivan.showReport();
+		toni.setCurrentTask(task4);
+		toni.work();
+		toni.showReport();
+		doni.setCurrentTask(task6);
+		doni.work();
+		doni.setCurrentTask(task3);
+		doni.showReport();
+		moni.setCurrentTask(task5);
+		moni.work();
+		moni.showReport();
+		
+		
+
+	}
+
+}
