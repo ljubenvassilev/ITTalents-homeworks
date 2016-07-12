@@ -5,7 +5,7 @@ class Task {
 	private String name;
 	private int workingHours;
 	
-	private String getName() {
+	String getName() {
 		return name;
 	}
 	private void setName(String name) {
