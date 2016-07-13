@@ -55,7 +55,7 @@ class Employee {
 	}
 	
 	void work(){
-		System.out.println(getName()+" starts to work");
+		System.out.println(getName()+" starts to work on "+currentTask.getName());
 		while (getHoursLeft()>0){
 			if (getHoursLeft()>=currentTask.getWorkingHours()){
 				setHoursLeft(getHoursLeft()-currentTask.getWorkingHours());
@@ -68,6 +68,9 @@ class Employee {
 					return;
 				}
 				System.out.println(getName()+" gets task "+currentTask.getName());
+				if(getHoursLeft()==0){
+					System.out.println(getName()+" finished for today");
+				}
 			}
 			else{
 				currentTask.setWorkingHours(currentTask.getWorkingHours()-getHoursLeft());

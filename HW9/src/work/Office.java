@@ -36,7 +36,7 @@ public class Office {
 			}
 			day++;
 		}
-
+		System.out.println("All work is done");
 	}
 
 }
