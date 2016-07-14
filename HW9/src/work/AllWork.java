@@ -6,12 +6,18 @@ class AllWork {
 	private int freePlacesForTasks;
 	int currentUnassignedTask;
 	
-	AllWork() {
+//	AllWork() {
+//	
+//		this.tasks = new Task[10];
+//		freePlacesForTasks=10;
+//		currentUnassignedTask=0;
+//		
+//	}
 	
-		this.tasks = new Task[10];
-		freePlacesForTasks=10;
+	AllWork (int numberTasks){
+		freePlacesForTasks=numberTasks;
 		currentUnassignedTask=0;
-		
+		tasks= new Task[numberTasks];
 	}
 	
 	void addTask(Task nextTask){
