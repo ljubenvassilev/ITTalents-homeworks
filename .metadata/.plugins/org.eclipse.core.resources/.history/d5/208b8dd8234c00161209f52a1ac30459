@@ -1,0 +1,25 @@
+package notes;
+import java.util.Scanner;
+public class NotepadDemo {
+
+	public static void main(String[] args) {
+
+		Page one = new Page();
+		one.setCaption("Test Caption");
+		one.addText("Test page 1");
+		System.out.println(one.view());
+		System.out.println("--------------");
+		Scanner sc= new Scanner(System.in);
+		int pageCount;
+		do{
+			System.out.println("Input number of pages for the Simple Notepad");
+			pageCount=sc.nextInt();
+		}
+		while(pageCount<1);
+		SimpleNotepad notepad1 = new SimpleNotepad(pageCount);
+		
+		
+		notepad1.print();
+	}
+
+}

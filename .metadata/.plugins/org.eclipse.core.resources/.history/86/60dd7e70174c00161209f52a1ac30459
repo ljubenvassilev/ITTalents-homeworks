@@ -1,0 +1,9 @@
+package notes;
+
+public class SecuredNotepad extends SimpleNotepad {
+
+	public SecuredNotepad(int pageCount) {
+		super(pageCount);
+	}
+
+}

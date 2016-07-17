@@ -1,0 +1,41 @@
+package notes;
+
+public class SimpleNotepad implements INotepad{
+
+	Page[] pages;
+	
+	public SimpleNotepad(int pageCount) {
+		pages = new Page[pageCount];
+		for (int i = 0; i < pages.length; i++) {
+			pages[i] = new Page();
+			pages[i].setCaption(String.valueOf(i+1));
+		}
+	}
+	
+	@Override
+	public void addTextToPage(String addition, int pageNumber) {
+		if(!pages[pageNumber].getContent().equals(null)){
+			pages[pageNumber].addText("\r\n");
+		}
+		pages[pageNumber-1].addText(addition);
+	}
+
+	@Override
+	public void replaceTextOnPage(String newText, int pageNumber) {
+		pages[pageNumber].deleteText();
+		pages[pageNumber].addText(newText);
+	}
+
+	@Override
+	public void deletePage(int pageNumber) {
+		pages[pageNumber].deleteText();
+	}
+
+	@Override
+	public void print() {
+		for (int i = 0; i < pages.length; i++) {
+			System.out.println(pages[i].view());
+		}
+	}
+
+}

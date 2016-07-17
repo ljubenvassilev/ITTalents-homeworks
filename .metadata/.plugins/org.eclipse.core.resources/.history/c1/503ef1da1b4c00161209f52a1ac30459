@@ -1,0 +1,17 @@
+package notes;
+
+public class NotepadDemo {
+
+	public static void main(String[] args) {
+
+		Page one = new Page();
+		one.setCaption("Test Caption");
+		one.addText("Test page 1");
+		System.out.println(one.view());
+		
+		SimpleNotepad notepad1 = new SimpleNotepad(5);
+		notepad1.addTextToPage("This is new text on page 1", 1);
+		notepad1.print();
+	}
+
+}

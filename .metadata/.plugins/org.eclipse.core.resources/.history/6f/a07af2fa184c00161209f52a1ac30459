@@ -1,0 +1,12 @@
+package notes;
+
+public class NotepadDemo {
+
+	public static void main(String[] args) {
+
+		Page one = new Page();
+		one.addText("Test page 1");
+		System.out.println(one.toString());
+	}
+
+}
