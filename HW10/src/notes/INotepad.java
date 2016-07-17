@@ -10,4 +10,8 @@ public interface INotepad {
 	
 	void print();
 	
+	boolean searchWord(String word);
+	
+	void printAllPagesWithDigits();
+	
 }

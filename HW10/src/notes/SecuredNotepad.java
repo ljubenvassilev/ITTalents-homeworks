@@ -6,7 +6,7 @@ public class SecuredNotepad extends SimpleNotepad {
 		super(pageCount);
 		this.password=password;
 	}
-	private final String password;
+	protected final String password;
 	
 	public void addTextToPage(String addition, int pageNumber, String password) {
 		if(!checkPassword(password)){
@@ -40,7 +40,23 @@ public class SecuredNotepad extends SimpleNotepad {
 		super.print();
 	}
 	
-	private boolean checkPassword(String pass){
+	public void printAllPagesWithDigits(String password) {
+		if(!checkPassword(password)){
+			System.out.println("Wrong password!");
+			return;
+		}
+		super.printAllPagesWithDigits();
+	}
+	
+	public boolean searchWord(String word, String password) {
+		if(!checkPassword(password)){
+			System.out.println("Wrong password!");
+			return false;
+		}
+		return super.searchWord(word);
+	}
+	
+	boolean checkPassword(String pass){
 		return this.password.equals(pass);
 	}
 

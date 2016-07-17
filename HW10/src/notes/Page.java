@@ -26,4 +26,12 @@ class Page {
 	String view(){
 		return caption+"\n"+content;
 	}
+	
+	boolean searchWord(String word){
+		return content.contains(word);
+	}
+	
+	boolean containsDigits(){
+		return content.contains("\\d");
+	}
 }

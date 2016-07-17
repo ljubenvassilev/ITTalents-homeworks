@@ -1,0 +1,156 @@
+package notes;
+
+import java.util.Scanner;   
+import java.io.*;           
+
+public class PasswordCheck //create the class
+{
+       private boolean isFiveCharacters;  //true if has 5 characters, false if                                                                                  doesn't
+       private boolean hasOneUppercase;  //true if has 1 uppercase character, false if doesn't
+       private boolean hasOneLowercase;  //true if has 1 lowercase character, false if doesn't
+       private boolean hasOneDigit;      //true if has 1 digit, false if doesn't
+       public boolean isPasswordValid;  //true if all other conditions are true, false otherwise
+       private String password;         //global variable declaring string
+
+       //create constructor with string as input
+       public PasswordCheck(String pwd){
+          password = pwd;   //set password to the variable being passed in
+          setFiveCharacters();   //call the method
+          setOneUppercase();      //call the method
+          setOneLowercase();      //call the method
+          setOneDigit();          //call the method
+          setPasswordValid();     //call the method            
+
+       }
+
+       //create methods to change attributes/fields above
+       public void setFiveCharacters(){
+
+           if (password.length() >= 5)  //if statement to validate password length
+          {
+             isFiveCharacters = true;  //if passes condition test, set to true
+          }   
+          else  //if not 8 characters
+          {
+             isFiveCharacters = false;    //set boolean to false
+          }
+       } 
+
+       public void setOneUppercase(){   //method to check if password contains uppercase letter
+
+         int i;    //declare count variable
+         char ch;  //declare char variable
+         boolean hasUpper = false;   //declare and initialize boolean to false
+
+         for ( i = 0; i < password.length(); i++ ) {   //begin loop to read through string
+
+             ch = password.charAt(i);   //sets ch to character in position of string
+             if (Character.isUpperCase(ch))   //tests to see if character is uppercase
+             {    
+                 hasUpper = true;
+             }
+
+         }
+
+             if(hasUpper == true)    
+             {
+                hasOneUppercase = true;
+             } 
+             else 
+             {
+                hasOneUppercase = false;
+             }
+       }
+
+       public void setOneLowercase(){   //method to check if password contains lowercase letter
+
+         int i;    //declare count variable
+         char ch;  //declare char variable
+         boolean hasLower = false;   //declare and initialize boolean
+
+         for ( i = 0; i < password.length(); i++ ) {   //begin loop
+
+             ch = password.charAt(i);
+             if (Character.isLowerCase(ch))   //tests to see if string contains lowercase letter
+             {    
+                 hasLower = true;
+             }
+
+         }
+
+             if(hasLower == true)
+             {
+                hasOneLowercase = true;
+             } 
+             else 
+             {
+                hasOneLowercase = false;
+             }
+       }
+
+       public void setOneDigit(){    //method to see if string contains a number
+
+         int i;    //declares the count variable
+         char ch;  //declares the char variable
+         boolean hasNumber = false;     //declares and intializes the boolean variable
+
+         for ( i = 0; i < password.length(); i++ ) {   //begin loop
+
+             ch = password.charAt(i);
+             if (Character.isDigit(ch)) //tests to see if character is a number
+             {    
+                 hasNumber = true;
+             }
+
+         }
+
+             if(hasNumber == true)
+             {
+                hasOneDigit = true;
+             } 
+             else 
+             {
+                hasOneDigit = false;
+             }
+       }
+
+       public void setPasswordValid(){     //method to test is all conditions are met for a valid password
+
+          if (isFiveCharacters && hasOneUppercase && hasOneLowercase && hasOneDigit == true) //if all true
+          {
+             isPasswordValid = true;
+          }
+          else
+          {
+             isPasswordValid = false;
+          }
+       }
+
+
+
+       //create a method to check ok or missing, pass in one of the booleans
+       public String acceptable(boolean x) {
+
+          String var="";
+            if (x == true)
+             var = "OK";
+            else
+             var = "Missing";
+
+          return var;    //return statement
+       }
+
+       //create a method to validate all conditions
+       public String validate(boolean x) {
+
+          String valid="";
+             if (x == true)
+                valid = "\nPassword is valid.";
+             else
+                valid = "\nPassword is not valid.";
+
+          return valid;     //return statement
+       }
+
+
+}

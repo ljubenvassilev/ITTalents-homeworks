@@ -1,0 +1,31 @@
+package notes;
+
+public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectronicDevice {
+
+	public ElectronicSecuredNotepad(int pageCount, String password) {
+		super(pageCount, password);
+		isStarted=false;
+	}
+
+	boolean isStarted;
+	
+	@Override
+	public void start() {
+		isStarted=true;
+	}
+
+	@Override
+	public void stop() {
+		isStarted=false;
+	}
+
+	@Override
+	public boolean isStarted() {
+		if(isStarted){
+			return true;
+		}
+		return false;
+	}
+
+	
+}
