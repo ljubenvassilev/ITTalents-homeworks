@@ -23,8 +23,9 @@ class Page {
 		content="";
 	}
 	
-	String view(){
-		return caption+"\n"+content;
+	void view(){
+		System.out.println(caption);
+		System.out.println(content);
 	}
 	
 	boolean searchWord(String word){
@@ -32,6 +33,12 @@ class Page {
 	}
 	
 	boolean containsDigits(){
-		return content.contains("\\d");
+		char[] chars = content.toCharArray();
+		for (int i = 0; i < chars.length; i++) {
+			if(Character.isDigit(chars[i])){
+				return true;
+			}
+		}
+		return false;
 	}
 }

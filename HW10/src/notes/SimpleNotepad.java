@@ -43,7 +43,7 @@ public class SimpleNotepad implements INotepad{
 	@Override
 	public void print() {
 		for (int i = 0; i < pages.length; i++) {
-			System.out.println(pages[i].view());
+			pages[i].view();
 		}
 	}
 	
@@ -68,7 +68,7 @@ public class SimpleNotepad implements INotepad{
 	public void printAllPagesWithDigits() {
 		for (int i = 0; i < pages.length; i++) {
 			if(pages[i].containsDigits()){
-				System.out.println(pages[i].view());
+				pages[i].view();
 			}
 		}
 	}

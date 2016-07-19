@@ -1,11 +1,15 @@
 package notes;
 
+import java.awt.Checkbox;
+
+import javax.xml.stream.events.StartDocument;
+
 public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectronicDevice {
 
 	
 	boolean isStarted;
 	
-	public ElectronicSecuredNotepad(int pageCount, String password) {
+	public ElectronicSecuredNotepad(int pageCount, String password) throws WeakPasswordException {
 		super(pageCount, password);
 		isStarted=false;
 	}
@@ -14,9 +18,27 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 	public void start() {
 		isStarted=true;
 	}
+	
+	public void start (String password){
+		if(!checkPassword(password)){
+			System.out.println("Wrong password!");
+			return;
+		}
+		System.out.println("Device is turned ON");
+		isStarted=true;
+	}
 
 	@Override
 	public void stop() {
+		isStarted=false;
+	}
+	
+	public void stop(String password){
+		if(!checkPassword(password)){
+			System.out.println("Wrong password!");
+			return;
+		}
+		System.out.println("Device is turned OFF");
 		isStarted=false;
 	}
 
@@ -33,11 +55,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return;
-		}
-		super.addTextToPage(addition, pageNumber);
+		super.addTextToPage(addition, pageNumber, password);
 	}
 
 	public void replaceTextOnPage(String newText, int pageNumber, String password) {
@@ -45,11 +63,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return;
-		}
-		super.replaceTextOnPage(newText, pageNumber);
+		super.replaceTextOnPage(newText, pageNumber, password);
 	}
 
 	public void deletePage(int pageNumber, String password) {
@@ -57,11 +71,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return;
-		}
-		super.deletePage(pageNumber);
+		super.deletePage(pageNumber, password);
 	}
 
 	public void print(String password) {
@@ -69,11 +79,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return;
-		}
-		super.print();
+		super.print(password);
 	}
 	
 	public void printAllPagesWithDigits(String password) {
@@ -81,11 +87,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return;
-		}
-		super.printAllPagesWithDigits();
+		super.printAllPagesWithDigits(password);
 	}
 	
 	public boolean searchWord(String word, String password) {
@@ -93,12 +95,7 @@ public class ElectronicSecuredNotepad extends SecuredNotepad implements IElectro
 			System.out.println("Electronic notepad not turned on!");
 			return false;
 		}
-		if(!checkPassword(password)){
-			System.out.println("Wrong password!");
-			return false;
-		}
-		return super.searchWord(word);
+		return super.searchWord(word, password);
 	}
-	
 	
 }
