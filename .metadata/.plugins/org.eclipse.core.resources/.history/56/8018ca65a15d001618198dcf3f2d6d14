@@ -1,0 +1,29 @@
+package assemblyLine;
+
+public class Demo {
+
+	public static void main(String[] args) {
+
+		Thread tire1 = new Tire();
+		tire1.start();
+		Thread tire2 = new Tire();
+		Thread tire3 = new Tire();
+		Thread tire4 = new Tire();
+		Thread engine = new Engine();
+		Thread frame = new Frame();
+		Thread seat1 = new Seat();
+		Thread seat2 = new Seat();
+		Thread seat3 = new Seat();
+		Thread seat4 = new Seat();
+		Thread seat5 = new Seat();
+		new Thread(()->{System.out.println("tralala");
+			try {
+				Thread.sleep(7000);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}}).start();
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package assemblyLine;
+
+public class Engine extends Thread {
+
+	@Override
+	public void run() {
+		
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			System.out.println("Engine not created successfully!");
+			return;
+		}
+		System.out.println("An engine was created.");
+	}
+	
+}

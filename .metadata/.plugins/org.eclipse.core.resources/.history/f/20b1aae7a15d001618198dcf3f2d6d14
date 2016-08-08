@@ -1,0 +1,29 @@
+package assemblyLine;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Demo {
+
+	public static void main(String[] args) {
+
+		ArrayList<Thread> arr = new ArrayList<>();
+		arr.add(new Tire());
+		arr.add(new Tire());
+		arr.add(new Tire());
+		arr.add(new Tire());
+		arr.add(new Seat());
+		arr.add(new Seat());
+		arr.add(new Seat());
+		arr.add(new Seat());
+		arr.add(new Seat());
+		arr.add(new Engine());
+		arr.add(new Frame());
+		for (Iterator iterator = arr.iterator(); iterator.hasNext();) {
+			Thread thread = (Thread) iterator.next();
+			thread.start();
+		}
+		
+	}
+
+}

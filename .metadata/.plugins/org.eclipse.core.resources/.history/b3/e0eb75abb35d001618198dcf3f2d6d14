@@ -1,0 +1,18 @@
+package assemblyLine;
+
+public class Frame extends Thread {
+
+	@Override
+	public void run() {
+
+		System.out.println("A frame production starts.");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			System.out.println("Frame not created successfully!");
+			return;
+		}
+		System.out.println("A frame was created.");
+	}
+	
+}

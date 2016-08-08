@@ -1,8 +1,0 @@
-package notes;
-
-public interface IElectronicDevice {
-
-	boolean isStarted=false;
-	void stop();
-	void start();
-}

@@ -1,0 +1,17 @@
+package assemblyLine;
+
+public class Tire extends Thread {
+
+	@Override
+	public void run() {
+		System.out.println("A tire production starts.");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			System.out.println("Tire not created successfully!");
+			return;
+		}
+		System.out.println("A tire was created.");
+	}
+	
+}

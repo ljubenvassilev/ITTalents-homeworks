@@ -1,0 +1,17 @@
+package assemblyLine;
+
+public class Seat extends Thread {
+
+	@Override
+	public void run() {
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			System.out.println("Seat not created successfully!");
+			return;
+		}
+		System.out.println("A seat was created.");
+	}
+	
+}
